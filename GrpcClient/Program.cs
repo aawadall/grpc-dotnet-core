@@ -15,6 +15,8 @@ namespace GrpcClient
         const int Port = 9000;
         static void Main(string[] args)
         {
+            Environment.SetEnvironmentVariable("GRPC_DNS_RESOLVER",
+                                               "native");
             var option = 1; // int.Parse(args[0]);
 
             var cacert = File.ReadAllText(@"certs/ca.crt");
@@ -49,8 +51,10 @@ namespace GrpcClient
             Console.WriteLine($"Establishing hollow connection using:");
             
             Metadata metadata = new Metadata();
-            metadata.Add("username", "username1");
-            metadata.Add("password", "password1");
+            metadata.Add("md01", "0x00");
+            metadata.Add("md03", "0xd0");
+            //metadata.Add("username", "username1");
+            //metadata.Add("password", "password1");
 
             foreach (var item in metadata)
             {
@@ -62,6 +66,7 @@ namespace GrpcClient
             }
             catch (Exception e)
             {
+                Console.WriteLine($"{e.Message}");
                 // Just swallow the expected exception
             }
 

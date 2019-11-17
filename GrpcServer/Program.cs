@@ -22,16 +22,21 @@ namespace GrpcServer
             var sslCredentials = new SslServerCredentials(new List<KeyCertificatePair>()
             {
                 keypair
-            }, cacert, forceClientAuth:false);
+            }, cacert, false);
 
             Server server = new Server
             {
-                Ports = { new ServerPort("0.0.0.0", Port, sslCredentials) },
-                Services = { BindService(new EmployeeService())}
+                Ports = { //new ServerPort("0.0.0.0", Port, sslCredentials),
+                new ServerPort("[::]", Port, sslCredentials) }
+                
             };
-
+            server.Services.Add(BindService(new EmployeeService()));
+            foreach (var service in server.Services)
+            {
+                Console.WriteLine($"Service: {service}");
+            }
             server.Start();
-
+            
             Console.WriteLine($"Starting Server on port {Port}");
             Console.WriteLine("Press any key to stop...");
             Console.ReadKey();
@@ -41,15 +46,19 @@ namespace GrpcServer
 
         public class EmployeeService : EmployeeServiceBase
         {
-            
+            public EmployeeService()
+            {
+                Console.WriteLine($"new service {this.GetType().Name}");
+            }
             public override async Task<EmployeeResponse> GetByBadgeNumber(GetByBadgeNumberRequest request, ServerCallContext context)
             {
-                Console.WriteLine($"{System.Reflection.MethodBase.GetCurrentMethod().Name} invoked");
+                Console.WriteLine($"Service invoked");
                 Metadata metadata = context.RequestHeaders;
                 foreach (var entry in metadata)
                 {
-                    Console.WriteLine($"{entry.Key}: {entry.Value}");
+                    Console.WriteLine(entry.Key + ": " + entry.Value);
                 }
+
 
                 return new EmployeeResponse();
             }

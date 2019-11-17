@@ -2,7 +2,7 @@
   "profiles": {
     "GrpcServer": {
       "commandName": "Project",
-      "workingDirectory": "D:\\Projects\\gRPC\\exp2\\pkg"
+      "workingDirectory": "D:\\Projects\\gRPC\\exp2\\GrpcServer"
     }
   }
 }
