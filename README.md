@@ -26,7 +26,7 @@ for the generated code to work, we need the following nugets installed:
 
 to generate code, we call the following command:
 
-```batch
+```bat
 protoc -I pb messages.proto --csharp_out=. --grpc_out=. --plugin=protoc-gen-grpc=grpc_csharp_plugin.exe
 ```
 
