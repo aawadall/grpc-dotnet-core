@@ -1,0 +1,2 @@
+::requires explicitly pointing at nuget location or adding it in path 
+protoc -I pb pb\messages.proto --csharp_out=. --grpc_out=. --plugin=protoc-gen-grpc=C:\Users\aawad\.nuget\packages\grpc.tools\2.25.0\tools\windows_x64\grpc_csharp_plugin.exe
