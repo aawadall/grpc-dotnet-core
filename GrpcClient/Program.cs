@@ -17,7 +17,7 @@ namespace GrpcClient
         {
             Environment.SetEnvironmentVariable("GRPC_DNS_RESOLVER",
                                                "native");
-            var option = 2; // int.Parse(args[0]);
+            var option = 3; // int.Parse(args[0]);
 
             var cacert = File.ReadAllText(@"certs/ca.crt");
             var cert = File.ReadAllText(@"certs/client.crt");

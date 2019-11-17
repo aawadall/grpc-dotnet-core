@@ -69,12 +69,20 @@ namespace GrpcServer
                 return new EmployeeResponse()
                 {
                     Employee = result
-                };
-                    
-                    
-                
+                };   
             }
 
+            public override async Task GetAll(GetAllRequest request, IServerStreamWriter<EmployeeResponse> responseStream, ServerCallContext context)
+            {
+                foreach (var employee in Employees.employees)
+                {
+                    await responseStream.WriteAsync(new EmployeeResponse()
+                    {
+                        Employee = employee
+                    });
+                }
+
+            }
         }
     }
 }
