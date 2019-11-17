@@ -17,7 +17,7 @@ namespace GrpcClient
         {
             Environment.SetEnvironmentVariable("GRPC_DNS_RESOLVER",
                                                "native");
-            var option = 1; // int.Parse(args[0]);
+            var option = 2; // int.Parse(args[0]);
 
             var cacert = File.ReadAllText(@"certs/ca.crt");
             var cert = File.ReadAllText(@"certs/client.crt");
@@ -73,7 +73,7 @@ namespace GrpcClient
         }
         public static async Task GetByBadgeNumber(EmployeeServiceClient client)
         {
-            var res = await client.GetByBadgeNumberAsync(new Messages.GetByBadgeNumberRequest() { BadgeNumber = 2080 });
+            var res = await client.GetByBadgeNumberAsync(new Messages.GetByBadgeNumberRequest() { BadgeNumber = 1001 });
             Console.WriteLine(res.Employee);
         }
 

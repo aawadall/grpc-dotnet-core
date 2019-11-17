@@ -3,6 +3,7 @@ using Messages;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using static Messages.EmployeeService;
 
@@ -59,8 +60,19 @@ namespace GrpcServer
                     Console.WriteLine(entry.Key + ": " + entry.Value);
                 }
 
+                var result = Employees.employees.FirstOrDefault(e => e.BadgeNumber == request.BadgeNumber);
 
-                return new EmployeeResponse();
+                if(result == null)
+                {
+                    throw new Exception($"Employee not found with Badge Number {request.BadgeNumber}");
+                }
+                return new EmployeeResponse()
+                {
+                    Employee = result
+                };
+                    
+                    
+                
             }
 
         }
