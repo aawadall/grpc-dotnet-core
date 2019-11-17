@@ -7,7 +7,7 @@ implemented on a Windows 10 home edition using Visual Studio 2019 and vs code
 there are some prerequisites to make this solution work:
 1. protobuf compiler `protoc` installed
 2. one or more protocol buffer description files
-3. client and server certificate files as described in the batch file [`gencert.bat`](gencert.bat)
+3. client and server certificate files as described in the batch file [`gencert.bat`](pkg/gencert.bat)
 
 ## Project Structure
 One solution made of three projects as follows
@@ -26,7 +26,9 @@ for the generated code to work, we need the following nugets installed:
 
 to generate code, we call the following command:
 
-`protoc -I pb messages.proto --csharp_out=. --grpc_out=. --plugin=protoc-gen-grpc=grpc_csharp_plugin.exe`
+```batch
+protoc -I pb messages.proto --csharp_out=. --grpc_out=. --plugin=protoc-gen-grpc=grpc_csharp_plugin.exe
+```
 
 in my implementation, I had to explicitly specify the location of grpc_csharp_plugin as `C:\Users\aawad\.nuget\packages\grpc.tools\2.25.0\tools\windows_x64\grpc_csharp_plugin.exe`
 also, this command needs to properly point at:
