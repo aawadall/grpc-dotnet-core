@@ -27,7 +27,7 @@ namespace GrpcServer
             Server server = new Server
             {
                 Ports = { //new ServerPort("0.0.0.0", Port, sslCredentials),
-                new ServerPort("[::]", Port, sslCredentials) }
+                new ServerPort("[::]", Port, sslCredentials) } // listening on IP6 port 9000 
                 
             };
             server.Services.Add(BindService(new EmployeeService()));
