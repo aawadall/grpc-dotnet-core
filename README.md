@@ -59,3 +59,20 @@ also, for client function, we need the following files from prerequisite step 3:
 - ca.crt
 - client.crt
 - client.key
+
+## Main challenges
+I faced the following issues to make my code work:
+1. I could not make my server listen on IP4 port 9000, so I changed it to listen at the IP6 port using the following piece of code:
+```csharp
+Server server = new Server
+            {
+                Ports = { //new ServerPort("0.0.0.0", Port, sslCredentials),
+                new ServerPort("[::]", Port, sslCredentials) } // listening on IP6 port 9000 
+                
+            };
+```
+1. I could not lookup the address of my server from client side until I introduced an enviroment variable for gRPC DNS resolver using the following piece of code:
+```csharp
+Environment.SetEnvironmentVariable("GRPC_DNS_RESOLVER",
+                                               "native");
+```
