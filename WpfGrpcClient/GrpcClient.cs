@@ -1,6 +1,7 @@
 ﻿using Grpc.Core;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using static Messages.EmployeeService;
 
 namespace WpfGrpcClient
@@ -9,6 +10,7 @@ namespace WpfGrpcClient
     {
         public bool SslReady { get; private set; }
         public bool Connected { get; private set; }
+        public Messages.EmployeeResponse EResult { get; private set; }
         #region Constructors
         public GrpcClient()
         {
@@ -49,6 +51,28 @@ namespace WpfGrpcClient
                 return false;
             }
         }
+
+        internal async Task GetByBadgeAsync(int badgeNumber)
+        {
+            try
+            {
+                Metadata metadata = new Metadata
+                {
+                    {"purpose", "query" }
+                };
+                EResult = await _client.GetByBadgeNumberAsync(new Messages.GetByBadgeNumberRequest() { BadgeNumber = badgeNumber }, metadata);
+                
+                //return result.Employee.FirstName;
+            }
+            catch (Exception e)
+            {
+                //return $"Something went wrong {e.Message}";
+                
+            }
+
+        }
+
+        
 
         private bool SetupSsl(string caCertLocation, string certLocation, string clientKeyLocation)
         {

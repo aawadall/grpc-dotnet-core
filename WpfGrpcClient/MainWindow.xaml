@@ -8,7 +8,14 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="ConnectButton" Content=" Connect to Service " HorizontalAlignment="Left" Height="21" Margin="53,36,2,2" VerticalAlignment="Top" Width="107" Click="Button_Click"/>
-        <Button x:Name="SslStatus" Content="SSL Status: " HorizontalAlignment="Left" Height="21" Margin="178,36,0,0" VerticalAlignment="Top" Width="107" IsEnabled="False" Background="Red"/>
-        <Button x:Name="ConnectionStatus" Content="Connection Status: " HorizontalAlignment="Left" Height="21" Margin="288,36,0,0" VerticalAlignment="Top" Width="107" IsEnabled="False" Background="Red"/>
+        <Button x:Name="SslStatus" Content="SSL Unknown" HorizontalAlignment="Left" Height="21" Margin="178,36,0,0" VerticalAlignment="Top" Width="107" IsEnabled="False" Foreground="Red"/>
+        <Button x:Name="ConnectionStatus" Content="Disconnected" HorizontalAlignment="Left" Height="21" Margin="288,36,0,0" VerticalAlignment="Top" Width="107" IsEnabled="False" Foreground="Red"/>
+        <Grid x:Name="Commands" IsEnabled="False" Margin="51,70,2,2" Width="150" HorizontalAlignment="Left">
+            <Button x:Name="GetByBadgeNumber" Content="Get By Badge #" HorizontalAlignment="Left" Height="21" Margin="2,2,2,2" VerticalAlignment="Top" Width="107" Click="GetByBadgeNumber_Click"></Button>
+        </Grid>
+        <Grid x:Name="Arguments" IsEnabled="False" Margin="176,70,2,2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
+            <Label Content="Badge Number" Margin="2,2,2,2" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
+            <TextBox x:Name="BadgeNumber" Width="50" Height="21" Margin="51,2,2,2" HorizontalAlignment="Right" VerticalAlignment="Top"></TextBox>
+        </Grid>
     </Grid>
 </Window>
