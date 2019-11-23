@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{09D1E6D1-5897-4FB2-8811-3030B8FDDB4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messages", "Messages\Messages.csproj", "{09D1E6D1-5897-4FB2-8811-3030B8FDDB4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServer", "GrpcServer\GrpcServer.csproj", "{150DFF6A-3A2D-437E-9ED4-1901662BBAB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServer", "GrpcServer\GrpcServer.csproj", "{150DFF6A-3A2D-437E-9ED4-1901662BBAB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcClient", "GrpcClient\GrpcClient.csproj", "{F028F79C-D7EA-499E-8A5F-2A60E02E88AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcClient", "GrpcClient\GrpcClient.csproj", "{F028F79C-D7EA-499E-8A5F-2A60E02E88AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfGrpcClient", "WpfGrpcClient\WpfGrpcClient.csproj", "{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{F028F79C-D7EA-499E-8A5F-2A60E02E88AD}.Release|x64.Build.0 = Release|Any CPU
 		{F028F79C-D7EA-499E-8A5F-2A60E02E88AD}.Release|x86.ActiveCfg = Release|Any CPU
 		{F028F79C-D7EA-499E-8A5F-2A60E02E88AD}.Release|x86.Build.0 = Release|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Debug|x64.Build.0 = Debug|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Debug|x86.Build.0 = Debug|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Release|x64.ActiveCfg = Release|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Release|x64.Build.0 = Release|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Release|x86.ActiveCfg = Release|Any CPU
+		{D35FDDAD-8EAE-4061-AD41-4C1410171BE4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

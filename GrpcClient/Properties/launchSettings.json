@@ -2,7 +2,8 @@
   "profiles": {
     "GrpcClient": {
       "commandName": "Project",
-      "commandLineArgs": "1"
+      "commandLineArgs": "1",
+      "workingDirectory": "D:\\Projects\\gRPC\\exp2\\GrpcClient"
     }
   }
 }
